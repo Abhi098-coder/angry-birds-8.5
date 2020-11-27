@@ -21,7 +21,8 @@ function setup(){
     world = engine.world;
 
 
-    var mouse = Matter.Mouse.create(canvas.elt)
+    var mouse = Matter.Mouse.create(canvas.elt);
+    mouse.pixelRatio = pixelDensity();
     var options = {mouse:mouse};
     var MConstraint = Matter.MouseConstraint.create(engine, options);
     World.add(world, MConstraint);
